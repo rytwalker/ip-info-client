@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Form from './components/Form/Form';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <Container>
+        <AppHeading>IP Info</AppHeading>
+        <AppText>
+          Welcome to IP INFO! Please enter an IP address! Please input a valid
+          IP address or domain/file hash to see more information about it!
+        </AppText>
+        <Form />
+      </Container>
+    </AppWrapper>
   );
 }
+
+const AppWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+`;
+
+const AppHeading = styled.h1`
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+`;
+
+const AppText = styled.p`
+  font-weight: 300;
+  margin-bottom: 2rem;
+`;
 
 export default App;
