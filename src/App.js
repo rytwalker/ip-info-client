@@ -1,17 +1,19 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import Form from './components/Form/Form';
+import FormView from './views/FormView';
+import ResultsView from './views/ResultsView';
+import NotFoundView from './views/NotFoundView';
 
 function App() {
   return (
     <AppWrapper>
       <Container>
-        <AppHeading>IP Info</AppHeading>
-        <AppText>
-          Welcome to IP INFO! Please enter an IP address! Please input a valid
-          IP address or domain/file hash to see more information about it!
-        </AppText>
-        <Form />
+        <Switch>
+          <Route exact path="/" component={FormView} />
+          <Route path="/results" component={ResultsView} />
+          <Route component={NotFoundView} />
+        </Switch>
       </Container>
     </AppWrapper>
   );
@@ -29,17 +31,6 @@ const Container = styled.div`
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-`;
-
-const AppHeading = styled.h1`
-  font-size: 3.6rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-`;
-
-const AppText = styled.p`
-  font-weight: 300;
-  margin-bottom: 2rem;
 `;
 
 export default App;
