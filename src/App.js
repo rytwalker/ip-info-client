@@ -2,15 +2,15 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import FormView from './views/FormView';
-import ResultsView from './views/ResultsView';
 import NotFoundView from './views/NotFoundView';
+import ResultsView from './views/ResultsView';
 
-function App() {
+function App(props) {
   return (
     <AppWrapper>
       <Container>
         <Switch>
-          <Route exact path="/" component={FormView} />
+          <Route exact path="/" render={props => <FormView {...props} />} />
           <Route path="/results" component={ResultsView} />
           <Route component={NotFoundView} />
         </Switch>

@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Form = () => {
+const Form = props => {
   const [inputValue, setInputValue] = useState('');
   const [isValidInput, setValidInput] = useState(true);
 
   const handleFormSubmit = e => {
     e.preventDefault();
+
     console.log('submitted!');
+    console.log(props);
+    props.history.push('/results');
   };
 
   const handleInputChange = e => {

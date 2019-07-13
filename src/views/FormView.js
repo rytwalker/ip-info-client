@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Form from '../components/Form/Form';
 
-const FormView = () => {
+const FormView = props => {
   return (
     <>
       <AppHeading>IP Info</AppHeading>
@@ -10,7 +10,7 @@ const FormView = () => {
         Welcome to IP INFO! Please enter an IP address! Please input a valid IP
         address or domain/file hash to see more information about it!
       </AppText>
-      <Form />
+      <Form {...props} />
     </>
   );
 };
