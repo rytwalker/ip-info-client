@@ -2,15 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Results from '../components/Form/Results/Results';
 
 const ResultsView = props => {
-  console.log(props.addressData);
+  if (!props.addressData && props.isFetching === false) {
+    props.history.push('/');
+  }
   return (
     <>
       <AppHeading>Results</AppHeading>
-      <AppText>
-        {!props.addressData ? 'Loading...' : props.addressData.message}
-      </AppText>
+
+      {!props.addressData ? (
+        <AppText>'Loading...'</AppText>
+      ) : (
+        <Results results={props.addressData} />
+      )}
+
       <Link to="/">Go Back</Link>
     </>
   );

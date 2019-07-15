@@ -108,3 +108,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a,
+a:visited {
+  color: #568ea3;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #68c3d4;
+}
