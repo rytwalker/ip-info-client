@@ -1,3 +1,9 @@
+# IP Info
+A simple React App that takes a ipv4 IP Address and returns location information for it. Deployed on AWS using Terraform.
+
+[Deployed Site](http://ip-address-react-app-bucket.s3-website-us-east-1.amazonaws.com/)
+[API Repo](https://github.com/rytwalker/ip-info-api)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
