@@ -14,12 +14,12 @@ const Form = ({ getAddressData, history }) => {
   };
 
   const handleInputChange = e => {
-    setInputValue(e.target.value);
-    if (isIPAddress(inputValue)) {
+    if (isIPAddress(e.target.value)) {
       setValidInput(true);
     } else {
       setValidInput(false);
     }
+    setInputValue(e.target.value);
   };
 
   const isIPAddress = input => {
