@@ -3,16 +3,14 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { getAddressData } from '../../store/actions';
 
-const Form = props => {
+const Form = ({ getAddressData, history }) => {
   const [inputValue, setInputValue] = useState('');
   const [isValidInput, setValidInput] = useState(true);
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    props.getAddressData();
-    console.log('submitted!');
-    console.log(props);
-    props.history.push('/results');
+    getAddressData();
+    history.push('/results');
   };
 
   const handleInputChange = e => {

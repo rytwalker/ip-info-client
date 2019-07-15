@@ -14,21 +14,21 @@ export const ipAddressReducer = (state = initalState, action) => {
   switch (action.type) {
     case GET_ADDRESS_DATA:
       return {
-        isFetching: true,
-        ...state
+        ...state,
+        isFetching: true
       };
     case GET_ADDRESS_DATA_FAILURE:
       return {
+        ...state,
         isFetching: false,
         error: action.payload,
-        addressData: null,
-        ...state
+        addressData: null
       };
     case GET_ADDRESS_DATA_SUCCESS:
       return {
+        ...state,
         isFetching: false,
-        addressData: { ...action.payload },
-        ...state
+        addressData: { ...action.payload }
       };
     default:
       return {

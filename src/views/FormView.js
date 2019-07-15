@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Form from '../components/Form/Form';
 
 const FormView = props => {
-  // console.log(process.env.REACT_APP_AWS_URL);
   return (
     <>
       <AppHeading>IP Info</AppHeading>
