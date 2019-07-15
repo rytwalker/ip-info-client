@@ -7,8 +7,8 @@ const FormView = props => {
     <>
       <AppHeading>IP Info</AppHeading>
       <AppText>
-        Welcome to IP INFO! Please enter an IP address! Please input a valid IP
-        address or domain/file hash to see more information about it!
+        Welcome to IP INFO! Please input a valid IP address (currently only
+        supports ipv4) to see more information about it!
       </AppText>
       <Form {...props} />
     </>

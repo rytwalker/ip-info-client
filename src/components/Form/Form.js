@@ -9,7 +9,7 @@ const Form = ({ getAddressData, history }) => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    getAddressData();
+    getAddressData(inputValue);
     history.push('/results');
   };
 
@@ -27,7 +27,6 @@ const Form = ({ getAddressData, history }) => {
     let address = true;
     if (inputArr.length === 4) {
       inputArr.forEach(block => {
-        console.log(block);
         if (parseInt(block) > 255 || parseInt(block) < 0) {
           address = false;
         }
@@ -82,14 +81,12 @@ const FormInput = styled.input`
   font-size: inherit;
   font-family: inherit;
   border: 1px solid #000;
-  /* border-color: ${({ isValid }) => (isValid ? '#000' : 'red')}; */
   border-radius: 4px;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   &:focus {
     outline-style: none;
-    /* outline-width: 1px; */
-    border-color: ${({ isValid }) => (isValid ? 'green' : 'red')};
+    border-color: ${({ isValid }) => (isValid ? '#000' : 'red')};
   }
 `;
 
@@ -103,13 +100,17 @@ const FormButton = styled.button`
   font-family: inherit;
   border: 1px solid transparent;
   border-radius: 4px;
-  background: #c4c4c4;
-  color: #000;
+  background: ${({ disabled }) => (disabled ? '#c4c4c4' : '#568ea3')};
+  color: ${({ disabled }) => (disabled ? '#000' : '#fff')};
   padding: 0.5rem 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
   display: block;
   margin-left: auto;
+  transition: all 0.2s;
+  &:hover {
+    background: ${({ disabled }) => (disabled ? '#c4c4c4' : '#68c3d4')};
+  }
 `;
 
 export default connect(

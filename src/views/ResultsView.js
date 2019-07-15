@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Results from '../components/Form/Results/Results';
+import Results from '../components/Results/Results';
 
 const ResultsView = props => {
   if (!props.addressData && props.isFetching === false) {
