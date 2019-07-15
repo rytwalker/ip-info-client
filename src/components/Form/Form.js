@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { getAddressData } from '../../store/actions';
 
 const Form = props => {
   const [inputValue, setInputValue] = useState('');
@@ -7,7 +9,7 @@ const Form = props => {
 
   const handleFormSubmit = e => {
     e.preventDefault();
-
+    props.getAddressData();
     console.log('submitted!');
     console.log(props);
     props.history.push('/results');
@@ -112,4 +114,7 @@ const FormButton = styled.button`
   margin-left: auto;
 `;
 
-export default Form;
+export default connect(
+  null,
+  { getAddressData }
+)(Form);

@@ -10,9 +10,11 @@ export const getAddressData = () => dispatch => {
   axios
     .get(process.env.REACT_APP_AWS_URL)
     .then(res => {
+      console.log(res);
       dispatch({ type: GET_ADDRESS_DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {
+      console.log(err);
       dispatch({ type: GET_ADDRESS_DATA_FAILURE, payload: err });
     });
 };

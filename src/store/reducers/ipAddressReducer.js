@@ -6,7 +6,7 @@ import {
 
 const initalState = {
   isFetching: false,
-  addressData: [],
+  addressData: null,
   error: null
 };
 
@@ -21,13 +21,13 @@ export const ipAddressReducer = (state = initalState, action) => {
       return {
         isFetching: false,
         error: action.payload,
-        addressData: [],
+        addressData: null,
         ...state
       };
     case GET_ADDRESS_DATA_SUCCESS:
       return {
         isFetching: false,
-        addressData: [...action.payload],
+        addressData: { ...action.payload },
         ...state
       };
     default:
