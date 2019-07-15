@@ -6,6 +6,13 @@ A simple React App that takes a ipv4 IP Address and returns location information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Future Enhancement Plans
+- Support for ipv6
+- Full testing with React Testing Framework and Jest
+- Animations with React Spring
+- HTTPS Hosting with Cloudfront
+- Google Map integration
+
 ## Available Scripts
 
 In the project directory, you can run:
